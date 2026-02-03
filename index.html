@@ -15,7 +15,6 @@
         
         <button type="submit" class="answerButton" id="yesButton">Yes</button>
     </form>
-    
     <button class="answerButton" id="noButton">No, but</button>
     <br />
     <img src="cat.gif" alt="cat asking question" class="responsive" />
@@ -24,13 +23,13 @@
       document
         .getElementById("noButton")
         .addEventListener("click", function () {
-          // FIX 3: Updated selector to find the button by its new ID
+          // FIX 3: This selector now looks for the ID we added above
           var yesButton = document.getElementById("yesButton");
           
           var currentFontSize = parseInt(
             window.getComputedStyle(yesButton).fontSize
           );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 10px
+          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size
         });
     </script>
   </body>

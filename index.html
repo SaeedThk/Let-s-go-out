@@ -8,11 +8,14 @@
   </head>
   <body>
     <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
+    
     <form action="https://formspree.io/f/mojlgvwl" method="POST">
-    <input type="hidden" name="_next" value="https://akshitbhalla15.github.io/Valentine/thankyou.html">
-    <input type="hidden" name="answer" value="YES">
-    <button type="submit" class="answerButton">Yes</button>
+        <input type="hidden" name="_next" value="https://akshitbhalla15.github.io/Valentine/date.html">
+        <input type="hidden" name="answer" value="YES">
+        
+        <button type="submit" class="answerButton" id="yesButton">Yes</button>
     </form>
+    
     <button class="answerButton" id="noButton">No, but</button>
     <br />
     <img src="cat.gif" alt="cat asking question" class="responsive" />
@@ -21,13 +24,13 @@
       document
         .getElementById("noButton")
         .addEventListener("click", function () {
-          var yesButton = document.querySelector(
-            'button[onclick*="thankyou.html"]'
-          );
+          // FIX 3: Updated selector to find the button by its new ID
+          var yesButton = document.getElementById("yesButton");
+          
           var currentFontSize = parseInt(
             window.getComputedStyle(yesButton).fontSize
           );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 10px
         });
     </script>
   </body>

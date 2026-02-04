@@ -42,3 +42,17 @@ Contributions to the "Will You Be My Valentine?" project are more than welcome. 
 If you encounter any issues or have questions about the project, feel free to open an issue on the GitHub repository.
 
 # Valentine
+
+## Inspired By
+
+This project was inspired by the work of **byquangthanh**:  
+https://github.com/byquangthanh/valentine.github.io
+
+While the original project focused on the interactive Valentine prompt, this version expands on that idea by transforming it into a fully interactive date planner. Major enhancements include:
+
+- Adding a multi-step planning experience for selecting date details, food, desserts, and activities  
+- Integrating **Formspree** to deliver real-time email responses whenever a selection is made  
+- Improving responsiveness and overall user experience  
+- Refining the interface to create a smoother and more engaging interaction  
+
+Huge credit to **byquangthanh** for the original inspiration that made this project possible.

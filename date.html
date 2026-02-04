@@ -9,18 +9,31 @@
   <body>
     <h1 title="choose a date">Are you free on ...</h1>
     
-    <form class="form-group" action="https://formspree.io/f/xpqlvlwa" method="POST">
-      
-      <input type="hidden" name="_next" value="https://akshitbhalla15.github.io/Valentine/food.html">
-
+    <form id="dateForm" class="form-group" action="https://formspree.io/f/mojlgvwl" method="POST">
       <label>Which day: (select a date)</label>
       <div>
         <input type="date" name="date_picked" required />
-        
-        <button class="button" type="submit">
-          Submit
-        </button>
+        <button class="button" type="submit">Submit</button>
       </div>
     </form>
+
+    <script>
+      var form = document.getElementById("dateForm");
+      form.addEventListener("submit", function(event) {
+          event.preventDefault(); // Stop standard redirect
+          var data = new FormData(form);
+          fetch(form.action, {
+              method: form.method,
+              body: data,
+              headers: { 'Accept': 'application/json' }
+          }).then(response => {
+              if (response.ok) {
+                  window.location.href = "food.html"; // Redirect to Food page
+              } else {
+                  alert("Oops! There was a problem submitting your form");
+              }
+          });
+      });
+    </script>
   </body>
 </html>

@@ -11,73 +11,61 @@
       <b>What food would you like to eat?</b>
     </div>
 
-    <form action="https://formspree.io/f/xvzqeqkp" method="POST">
-      
-      <input type="hidden" name="_next" value="https://akshitbhalla15.github.io/Valentine/dessert.html">
-
+    <form id="foodForm" action="https://formspree.io/f/mojlgvwl" method="POST">
       <div class="food-selection">
         <div class="food-item">
-          <img src="food/burgers.jpeg" alt="Burgers, fries and fried chicken" />
-          <label>
-            <input type="checkbox" name="food" value="Burgers, fries and fried chicken"/>
-            burgers and fried chicken
-          </label>
+          <img src="food/burgers.jpeg" alt="Burgers" />
+          <label><input type="checkbox" name="food" value="Burgers"/> burgers</label>
         </div>
         <div class="food-item">
-          <img src="food/dog.jpeg" alt="dog" />
-          <label>
-              <input type="checkbox" name="food" value="hotdog" /> 
-              hotdog
-          </label>
+          <img src="food/dog.jpeg" alt="hotdog" />
+          <label><input type="checkbox" name="food" value="hotdog" /> hotdog</label>
         </div>
         <div class="food-item">
-          <img src="food/koreanfood.jpeg" alt="koreanfood" />
-          <label>
-              <input type="checkbox" name="food" value="Korean food" /> 
-              korean food
-          </label>
+          <img src="food/koreanfood.jpeg" alt="korean" />
+          <label><input type="checkbox" name="food" value="Korean food" /> korean</label>
         </div>
         <div class="food-item">
           <img src="food/pasta.jpeg" alt="pasta" />
-          <label>
-              <input type="checkbox" name="food" value="pasta" /> 
-              pasta
-          </label>
+          <label><input type="checkbox" name="food" value="pasta" /> pasta</label>
         </div>
         <div class="food-item">
           <img src="food/pizza.jpeg" alt="pizza" />
-          <label>
-              <input type="checkbox" name="food" value="pizza" /> 
-              pizza
-          </label>
+          <label><input type="checkbox" name="food" value="pizza" /> pizza</label>
         </div>
         <div class="food-item">
           <img src="food/salad.jpeg" alt="salad" />
-          <label>
-              <input type="checkbox" name="food" value="salad" /> 
-              salad
-          </label>
+          <label><input type="checkbox" name="food" value="salad" /> salad</label>
         </div>
         <div class="food-item">
           <img src="food/steak.jpeg" alt="steak" />
-          <label>
-              <input type="checkbox" name="food" value="steak" /> 
-              steak
-          </label>
+          <label><input type="checkbox" name="food" value="steak" /> steak</label>
         </div>
         <div class="food-item">
           <img src="food/sushi.jpeg" alt="sushi" />
-          <label>
-              <input type="checkbox" name="food" value="sushi" /> 
-              sushi
-          </label>
+          <label><input type="checkbox" name="food" value="sushi" /> sushi</label>
         </div>
       </div>
-
-      <button class="button" type="submit">
-        Continue UWU
-      </button>
-
+      <button class="button" type="submit">Continue UWU</button>
     </form>
+
+    <script>
+      var form = document.getElementById("foodForm");
+      form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          var data = new FormData(form);
+          fetch(form.action, {
+              method: form.method,
+              body: data,
+              headers: { 'Accept': 'application/json' }
+          }).then(response => {
+              if (response.ok) {
+                  window.location.href = "dessert.html"; // Redirect to Dessert page
+              } else {
+                  alert("Oops! There was a problem.");
+              }
+          });
+      });
+    </script>
   </body>
 </html>

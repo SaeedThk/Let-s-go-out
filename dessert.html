@@ -9,59 +9,53 @@
   <body>
     <div id="dessertquestion">Which dessert we eatin cuh</div>
 
-    <form action="https://formspree.io/f/xrelnlpb" method="POST">
-
-      <input type="hidden" name="_next" value="https://akshitbhalla15.github.io/Valentine/activities.html">
-
+    <form id="dessertForm" action="https://formspree.io/f/mojlgvwl" method="POST">
       <div class="dessert-selection">
         <div class="dessert-item">
           <img src="food/boba.jpeg" alt="boba" />
-          <label>
-            <input type="checkbox" name="dessert" value="boba" /> 
-            boba
-          </label>
+          <label><input type="checkbox" name="dessert" value="boba" /> boba</label>
         </div>
         <div class="dessert-item">
           <img src="food/churro.jpeg" alt="churro" />
-          <label>
-            <input type="checkbox" name="dessert" value="churro" /> 
-            churro
-          </label>
+          <label><input type="checkbox" name="dessert" value="churro" /> churro</label>
         </div>
         <div class="dessert-item">
           <img src="food/che.jpeg" alt="che" />
-          <label>
-            <input type="checkbox" name="dessert" value="che" /> 
-            che
-          </label>
+          <label><input type="checkbox" name="dessert" value="che" /> che</label>
         </div>
         <div class="dessert-item">
           <img src="food/mochi.jpeg" alt="mochi" />
-          <label>
-            <input type="checkbox" name="dessert" value="mochi" /> 
-            mochi
-          </label>
+          <label><input type="checkbox" name="dessert" value="mochi" /> mochi</label>
         </div>
         <div class="dessert-item">
           <img src="food/randombun.jpeg" alt="randombun" />
-          <label>
-            <input type="checkbox" name="dessert" value="randombun" /> 
-            random bun
-          </label>
+          <label><input type="checkbox" name="dessert" value="randombun" /> random bun</label>
         </div>
         <div class="dessert-item">
           <img src="food/taiyaki.jpeg" alt="taiyaki" />
-          <label>
-            <input type="checkbox" name="dessert" value="taiyaki" />
-            taiyaki
-          </label>
+          <label><input type="checkbox" name="dessert" value="taiyaki" /> taiyaki</label>
         </div>
       </div>
-
-      <button class="button" type="submit">
-        Continue UWU
-      </button>
-
+      <button class="button" type="submit">Continue UWU</button>
     </form>
+
+    <script>
+      var form = document.getElementById("dessertForm");
+      form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          var data = new FormData(form);
+          fetch(form.action, {
+              method: form.method,
+              body: data,
+              headers: { 'Accept': 'application/json' }
+          }).then(response => {
+              if (response.ok) {
+                  window.location.href = "activities.html"; // Redirect to Activities page
+              } else {
+                  alert("Oops! There was a problem.");
+              }
+          });
+      });
+    </script>
   </body>
 </html>

@@ -9,27 +9,50 @@
   <body>
     <div id="valentineQuestion"><b>Will you be my valentine?</b></div>
     
-    <form action="https://formspree.io/f/mojlgvwl" method="POST">
-        <input type="hidden" name="_next" value="https://akshitbhalla15.github.io/Valentine/date.html">
+    <form id="valentineForm" action="https://formspree.io/f/mojlgvwl" method="POST">
         <input type="hidden" name="answer" value="YES">
-        
         <button type="submit" class="answerButton" id="yesButton">Yes</button>
     </form>
+    
     <button class="answerButton" id="noButton">No, but</button>
     <br />
     <img src="cat.gif" alt="cat asking question" class="responsive" />
 
     <script>
+      // PART 1: Handle the "Yes" click (Send email + Redirect manually)
+      var form = document.getElementById("valentineForm");
+      
+      form.addEventListener("submit", function(event) {
+          event.preventDefault(); // Stop the standard Formspree redirect
+          
+          var data = new FormData(form);
+          
+          // Send the data to Formspree using AJAX (Background)
+          fetch(form.action, {
+              method: form.method,
+              body: data,
+              headers: {
+                  'Accept': 'application/json'
+              }
+          }).then(response => {
+              if (response.ok) {
+                  // SUCCESS! Now WE do the redirect manually
+                  window.location.href = "date.html"; 
+              } else {
+                  alert("Oops! There was a problem submitting your form");
+              }
+          });
+      });
+
+      // PART 2: The "No" button logic
       document
         .getElementById("noButton")
         .addEventListener("click", function () {
-          // FIX 3: This selector now looks for the ID we added above
           var yesButton = document.getElementById("yesButton");
-          
           var currentFontSize = parseInt(
             window.getComputedStyle(yesButton).fontSize
           );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size
+          yesButton.style.fontSize = currentFontSize + 10 + "px"; 
         });
     </script>
   </body>

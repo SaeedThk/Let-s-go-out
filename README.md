@@ -19,21 +19,12 @@ Welcome to the "Will You Be My Valentine?" project, a playful and interactive wa
 This project is built using simple yet powerful web technologies:
 - HTML
 - CSS
-- JavaScript
+- JavaScript (AJAX for seamless form submissions)
 - **Formspree** (for handling form submissions and emails)
 
 ## How to View
 
 To experience "Will You Be My Valentine?", simply visit [https://akshitbhalla15.github.io/Valentine/](https://akshitbhalla15.github.io/Valentine/) from any modern web browser.
-
-## How to Customize (For Developers)
-
-If you fork this repository to use for yourself, you must update the email handling to work for you:
-
-1. **Create a Formspree Account**: Go to [Formspree.io](https://formspree.io) and create a new form to get your unique endpoint URL.
-2. **Update the Forms**: In `index.html`, `date.html`, `food.html`, `dessert.html`, and `activities.html`, replace the `action` URL in the `<form>` tag with your own Formspree link.
-3. **Update Redirects**: Change the `_next` hidden input value in each file to match your own GitHub Pages URL structure.
-
 ## How to Contribute
 
 Contributions to the "Will You Be My Valentine?" project are more than welcome. Whether it's suggesting new features, improving the design, or fixing bugs, here's how you can contribute:
